@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Template</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        perspective: 1000px; /* Define the perspective */
+    }
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: #3498db;
+        transform-style: preserve-3d; /* Ensure child elements maintain 3D positioning */
+        transform: rotateY(45deg) rotateX(45deg); /* Initial rotation */
+        transition: transform 0.5s ease; /* Add smooth transition */
+    }
+    /* Define different faces of the 3D object */
+    .front, .back, .left, .right, .top, .bottom {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .front { transform: translateZ(100px); }
+    .back { transform: translateZ(-100px) rotateY(180deg); }
+    .left { transform: translateX(-100px) rotateY(-90deg); }
+    .right { transform: translateX(100px) rotateY(90deg); }
+    .top { transform: translateY(-100px) rotateX(90deg); }
+    .bottom { transform: translateY(100px) rotateX(-90deg); }
+    /* Hover effect */
+    .box:hover {
+        transform: rotateY(135deg) rotateX(135deg);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="front">Front</div>
+            <div class="back">Back</div>
+            <div class="left">Left</div>
+            <div class="right">Right</div>
+            <div class="top">Top</div>
+            <div class="bottom">Bottom</div>
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
